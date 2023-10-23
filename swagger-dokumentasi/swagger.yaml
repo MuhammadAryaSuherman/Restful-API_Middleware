@@ -1,0 +1,86 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: 'My API'
+  description: 'API Documentation'
+host: 'localhost:3000'
+schemes:
+  - 'http'
+paths:
+  /movies/pagination:
+    get:
+      summary: 'Get movies with pagination'
+      responses:
+        '200':
+          description: 'Successful operation'
+  /movies:
+    get:
+      summary: 'Get all movies'
+      responses:
+        '200':
+          description: 'Successful operation'
+    post:
+      summary: 'Create new movie'
+      parameters:
+        - in: body
+          name: movie
+          description: The movie to create.
+          schema:
+            type: object
+            required:
+              - title
+              - genres
+              - year
+            properties:
+              title:
+                type: string
+              genres:
+                type: string
+              year:
+                type: integer
+      responses:
+        '201':
+          description: 'Created successfully'
+  /movies/{id}:
+    get:
+      summary: 'Get movie by ID'
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: 'Successful operation'
+    put:
+      summary: 'Update movie by ID'
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+        - in: body
+          name: movie
+          description: The movie to update.
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              genres:
+                type: string
+              year:
+                type: integer
+      responses:
+        '201':
+          description: 'Updated successfully'
+    delete:
+      summary: 'Delete movie by ID'
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: integer
+      responses:
+        '201':
+          description: 'Deleted successfully'

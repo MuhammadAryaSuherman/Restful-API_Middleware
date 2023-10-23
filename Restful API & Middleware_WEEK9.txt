@@ -1,0 +1,16 @@
+users:
+
+localhost:3000 = membuka tampilan web register, dan ketika klik login maka akan tampil halaman login.
+localhost:3000/users = akan menampilkan list seluruh users.
+localhost:3000/users/pagination = akan menampilkan pagination list 10 users.
+localhost:3000/users/:id = akan menampilkan users berdasarkan id.
+
+
+movies: 
+
+localhost:3000/movies = menampilkan seluruh list film
+localhost:3000/movies/pagination = menampilkan pagination 10 list movies.
+localhost:3000/movies/:id = akan menampilkan movies berdasarkan id
+
+
+
